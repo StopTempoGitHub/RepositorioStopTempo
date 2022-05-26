@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Vollkorn&family=Vollkorn+SC&display=swap');
+/*font-family: 'Open Sans', sans-serif;
+font-family: 'Vollkorn', serif;
+font-family: 'Vollkorn SC', serif;*/
+
+
+
+
+/* VARIABLES */
+:root {
+    /* Colores */
+    --colorUno: #FFCD00;
+    --colorDos: #9E5D00;
+    --colorTres: #251605;
+    --colorWhite: #F2F1ED;
+    --colorBlack: #000000;
+    
+    /*Fonts*/
+    --fontVollSc: 'Vollkorn SC', serif;
+    --fontVoll: 'Vollkorn', serif;
+    --fontOpen: 'Open Sans', sans-serif;
+
+    /*Font Sizes*/
+    --textXlarge: 8em; /*80px*/
+    --textLarge: 5.2em; /*52px*/
+    --textMedium: 3em; /*30px*/
+    --textBase: 2.4em; /*24px*/
+    --textSmall: 2em; /*20px*/
+    --textXsmall: 1.6em; /*16px*/
+    --textXxsmall: 1em;
+}
+/* Fin VARIABLES */
+
+
+
+
+
+/*NORMALIZE (Qué son las normalizaciones? Son reseteos que le hacemos a nuestras etiquetas)*/
+* { /*Esta es la más básica de las normalizaciones. Usada para eliminar los posibles espaciados del navegador. Muchos navegadores establecen un margen por defecto en sus páginas. Con el reseteo de margin y padding eliminamos este comportamiento del navegador para luego determinar nosotros el comportamiento de los elementos*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /*desaparece el desplazamiento horizontal y corrige un problema con las imagenes de fondo haciendo scroll horizontal*/
+}
+
+html { 
+    font-size: 62.5%; /*Esta define el tamaño de los "em" y "rem" a 10px. "rem" es una unidad de medida que siempre va a hacer caso a la medida establecida en el html. "em" es una unidad de medida relativa; hará caso a la medida establecida en el html, salvo que el padre tenga otra medida establecida*/
+}
+/*Fin NORMALIZE*/
+
+
+
+
+
+/*** BODY ***/
+    /* Fondo de página */
+.body {
+    background-color: var(--colorBlack);
+}
+    /* Fin fondo de página */
+/*** FIN BODY ***/
+
+
+
+
+
+/*** HEADER ***/
+.header {
+    /* BackGround Header */
+    background: linear-gradient(173deg, rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
+    border-bottom: solid black;
+    /* FIN BackGround Header */
+    /* Flex al Header */
+    display: flex;
+    flex-direction: row; /*Con esto el menu se posiciona al lado del logo*/
+    justify-content: space-between; /*Con esto logro que el logo quede a la izquierda y el menu a la derecha*/
+    align-items: flex-end; /*pone los elementos en la linea inferior del header*/
+    /* Fin Flex al Header*/
+    padding: 0rem 0rem 0rem 1rem; /*el orden es: top,right, bottom, left*/
+}
+    /* LOGO */
+.header__logo img {
+    width: 200px;
+}
+    /* Fin LOGO */ 
+    /* MENU de nav*/
+.header__nav--menu {
+    list-style: none; /*quita los puntos de mi lista*/
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem; /*Separa un poco el menu de la linea inferior del header*/
+    margin-right: 3rem;
+}
+.header__nav--menu li {
+    font-family: var(--fontOpen);
+    font-size: var(--textMedium);
+    margin-right: 1em; /*me da distancia entre los elementos*/
+}
+.header__nav--menu li:last-child {
+    background-color: var(--colorDos);
+    border: var(--colorDos) solid 2px;
+    padding: 0.30rem 0.75rem;
+    border-radius: 0.6rem;
+    /*todo esto para darle apariencia de botón a "contacto"*/
+}
+.header__nav--menu li:last-child:hover {
+    background: transparent; /*transparenta el fondo de contacto al pasar el mouse*/
+}
+.header__nav--menu a {
+    color: var(--colorWhite); /*color de los enlaces*/
+    text-decoration: none; /*quita el subrayado de los enlaces*/
+}
+.header__nav--menu a:hover { /*pone color al pasar el mouse*/
+    color: var(--colorDos);
+}
+/*Empezamos a diseñar el menu hambuerguesa*/
+.menuHambur img {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}
+.menuHambur, #check {
+    display: none;
+}
+    /* Fin MENU de nav */
+/*** FIN HEADER ***/
+
+
+
+
+
+/*** MAIN ***/
+    /*Estilos de Fuente del Main*/
+.tituloStyles {
+    color: var(--colorWhite);
+    font-family: var(--fontVollSc);
+    font-size: var(--textXlarge);
+}
+.descripcionStyles {
+    color: var(--colorWhite);
+    font-family: var(--fontOpen);
+    font-size: var(--textSmall);
+}
+    /*Fin Estilos de Fuente del Main*/
+    /*Position: relative para texto e imagenes*/
+
+    /*Fin Position: relative para texto e imagenes*/
+
+        /*HOME*/
+.pictureHome img {
+    width: 100%;
+}
+.sectionHome {
+    margin-bottom: 15%;
+    display: grid;
+    grid-template-areas: 'picture picture picture'
+                         'titulo titulo titulo'
+                         'descrip descrip descrip';
+}
+.pictureHome {
+    grid-area: picture;
+}
+.tituloHome {
+    grid-area: titulo;
+    text-align: center;
+}
+.descripcionHome {
+    grid-area: descrip;
+    text-align: center;
+    margin-right: 20vw; margin-left: 20vw;
+}
+        /*Fin HOME*/
+
+        /*GALERIA*/
+.section__galeria img {
+    width: 100%;
+}
+.section__galeria {
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: .5rem; column-gap: 1rem;
+}
+.gal1 {
+    grid-column: 3; grid-row: 1;
+}
+.gal2 {
+    grid-column: 1/span 2; grid-row: 1/span 2;
+}
+.gal3 {
+    grid-column: 3; grid-row: 2;
+}
+.gal11 {
+    grid-column: 2/span 2; grid-row: 5/span 2;
+}
+        /*Fin GALERIA*/
+        
+        /*SERVICIOS*/
+.pictServicios img {
+    transform: translate(11%);
+    width: 100%;
+}
+.sectionServicios {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+}
+.pictServicios{
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+    z-index: -3;
+}
+.tituloServicios {
+    margin-left: 2rem; margin-top: 5rem;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: -2;
+}
+.descripcionServicios {
+    margin-left: 2rem;
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    z-index: -1;
+}
+        /*Fin SERVICIOS*/
+
+        /*SOBRE MI*/
+.pictSobre img {
+    width: 100%;
+}
+.sectionSobre {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    text-align: end;
+}
+.pictSobre{
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+    z-index: -3;
+}
+.tituloSobre {
+    margin-top: 1.6em; margin-right: .2em;
+    grid-column: 3;
+    grid-row: 1;
+    z-index: -2;
+}
+.descripcionSobre {
+    margin-right: 2rem;
+    grid-column: 3;
+    grid-row: 3;
+    z-index: -1;
+}   
+        /*Fin SOBRE MI*/
+
+        /*CONTACTO*/
+.pictContacto img {
+    transform: translate(9%);
+    width: 100%;
+}
+.sectionContacto {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat(3, auto);
+}
+.pictContacto {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+    z-index: -3;
+}
+.tituloContacto {
+    margin-top: 1em; margin-left: .2em;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: -2;
+}
+.formularioContacto {
+    margin-left: 2rem; margin-bottom: 3rem;
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3rem 3rem 3rem 3rem;
+    row-gap: 1em; column-gap: 1em;
+}
+.nombre {
+    grid-row: 1; grid-column: 1;
+}
+.apellido {
+    grid-row: 2; grid-column: 1;
+}
+.correo {
+    grid-row: 3; grid-column: 1;
+}
+.pregunta {
+    grid-row: 4; grid-column: 1 / span 2;
+}
+.enviar {
+    grid-row: 4; grid-column: 3;
+}
+        /*Fin CONTACTO*/
+/*** Fin MAIN ***/
+
+
+
+
+
+/*** PIE DE PÁGINA ***/
+.footer {
+    /* BackGround Footer */
+    background: linear-gradient(358deg, rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
+    border-top: solid black 3px;
+    padding: 1rem;
+    /* FIN BackGround Footer */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.footer h2 {
+    /*Contactanos*/ 
+    color: var(--colorWhite);
+    font-size: var(--textMedium);
+    font-family: var(--fontVollSc);
+}
+.footer p { 
+    /*Wsp, Correo y Volver al principio*/
+    color: var(--colorWhite);
+    font-size: var(--textSmall);
+    margin-left: 1rem;
+    font-family: var(--fontOpen);
+}
+/*** FIN PIE DE PÁGINA ***/
+
+
+
+
+/*** MEDIAS QUERY ***/
+@media (max-width:1428px){
+    .tituloSobre, .tituloContacto {
+        font-size: var(--textLarge);
+    }
+    .descripcionSobre {
+        font-size: var(--textXsmall);
+    }
+    
+}
+@media (max-width:1218px){
+    .tituloServicios {        
+        font-size: var(--textLarge);
+    }
+    .descripcionServicios {
+        font-size: var(--textXsmall);
+    }
+    /*Sobre Mi*/
+    .pictSobre img {
+        width: 100%;
+    }
+    .sectionSobre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15%;
+    }
+    .tituloSobre {
+        margin-top: 0; margin-left: 0;
+    }
+    .descripcionSobre {
+        width: 70%; 
+        margin-top: 0; margin-left: 0;
+    }
+}
+
+@media (max-width:968px){
+    /* Menu Hamburguesa */
+    .checkbtn {
+        display: block;
+        cursor: pointer;
+    }
+    .menuHambur {
+        display: block; /*hace aparecer el menuHambur*/
+        position: absolute; /*acomoda el menuHambur con respecto al menu. Con absolute lo dejo quieto en el header.*/
+        top: 8.5rem; right: 2rem ; /*separa el menuHambur del top y un poco del borde derecho*/
+    }
+    .header__nav--menu {
+        display: block; /*posiciona mi menu verticalmente*/
+        position: absolute;
+        left: -100%;
+        background: var(--colorBlack);
+        width: 100%;
+        height: 100vh; /*con esto estamos diciendo que cuando se muestre el menu de nav, ocupe todo el ancho y alto de la pantalla*/
+        right: 0;/*para que el menu se alinee a la derecha*/
+    }
+    .header__nav--menu li { /*modificamos los elementos de la lista*/
+        padding: 2rem; /*separa los elementos entre si verticalmente*/
+        display: flex;
+        justify-content: center; /*me los alinea al centro*/
+        margin: 0;
+    }
+    .header__nav--menu li:last-child {
+        background: none;
+        padding: 0.30rem 0.75rem;
+    }
+    #check:checked ~ ul { /*checked para indicar que se hará cada vez que le hagamos click. ~ (alt+126) para seleccionar todos elementos dentro del contenedor padre (ul para este caso)*/
+        left: 0;
+        transition: all 0.25s;
+    }
+    /* FIN Menu Hamburguesa*/
+    /*Servicios y contacto*/
+    .pictServicios img, .pictContacto img {
+        transform: none;
+        width: 100%;
+    }
+    .sectionServicios, .sectionContacto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15%;
+    }
+    .tituloServicios, .tituloContacto {
+        margin-top: 0; margin-left: 0;
+    }
+    .descripcionServicios {
+        width: 70%; 
+        margin-top: 0; margin-left: 0;
+    }
+    .formularioContacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
+        row-gap: 1em; column-gap: 1em;
+    }
+    .nombre {
+        grid-row: 1; grid-column: 2;
+    }
+    .apellido {
+        grid-row: 2; grid-column: 2;
+    }
+    .correo {
+        grid-row: 3; grid-column: 2;
+    }
+    .pregunta {
+        grid-row: 4; grid-column: 1 / span 3;
+    }
+    .enviar {
+        grid-row: 5; grid-column: 2;
+    }
+
+}
+
+@media (max-width:560px) {
+    /*header*/
+    .header__logo img {
+        width: 170px;
+    }
+    .menuHambur img {
+        width: 35px;
+        height: 35px;
+        border-radius: 3px;
+    }
+    /*main*/  
+    .tituloStyles {
+        font-size: var(--textMedium);
+    }
+    .descripcionStyles {
+        font-size: var(--textXxsmall);
+    }
+    /*main galeria*/
+.section__galeria {
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    row-gap: 1rem;
+}
+.gal1 {
+    grid-column: 1; grid-row: 1;
+}
+.gal2 {
+    grid-column: 1; grid-row: 2;
+}
+.gal3 {
+    grid-column: 1; grid-row: 3;
+}
+.gal11 {
+    grid-column: 1; grid-row: 11;
+}
+    /*footer*/
+    .footer {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        justify-content: center;
+        text-align: center;
+    }
+    .footer h2 {
+        /*Contactanos*/
+        font-size: var(--textSmall);
+    }
+    .footer p { 
+        /*Wsp, Correo y Volver al principio*/
+        font-size: var(--textXxsmall);
+    }
+}
+/*** FIN MEDIAS QUERY ***/
+
+
+
+
+
+/*COMENTARIOS A TUTORÍA
+-Continuo definiendo y modificando el uso de comentarios. Para este punto tuve que aplicarlos a estilos ya que me permiten recordar que hace cada uno de los estilos que aplico en especifico. Quizá pueden ser demasiados comentarios, pero mientras revisaba mi código me encontraba con elementos que ya no recordaba que hacían o porque los había usado. Espero esta sea una buena solución a corto plazo para ese problema.
+-Para este punto ya pude hacer que me tome la fuente. Sigo sin saber cual era el problema pero esta vez las tomó. Quizá anteriormente también lo hacía pero no era capaz de darme cuenta de la diferencia de fuente. Espero que esas fuentes sean acordes. Sino será cuestión de seguir buscando. La tipografía nunca se me dió muy bien.
+
+Agregados:
+-"variables" y nuevas funciones de normalize/reseteos.
+-Encontré varios estilos que había aplicado los cuales no tenían funcionalidad. Estos los fuí eliminando porq al parecer habían otras secciones del código que aplicaban el efecto deseado.
+-Aplicación de metodología BEM en algunos sectores del código. Particularmente me resulta cómodo en algunos sectores y en otras bastante incómodo de utilizar. Espero no sea un problema, pero tengo que seguir puliendo el nombrado de clases.
+-Menu hamburguesa al header.
+-Se aplicaron medias query y grid en todas las páginas según fuese necesario el uso.
+-Descubri como superponer los textos sobre las imagen a través del uso de grid y la propiedad z-index para solucionar un problema con el menu contraible.
+(comentarios actualizados nuevamente el 23/05 esta sería la versión completa del trabajo hasta el momento)
+*/
