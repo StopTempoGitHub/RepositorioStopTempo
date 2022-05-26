@@ -513,15 +513,5 @@ html {
 
 
 /*COMENTARIOS A TUTORÍA
--Continuo definiendo y modificando el uso de comentarios. Para este punto tuve que aplicarlos a estilos ya que me permiten recordar que hace cada uno de los estilos que aplico en especifico. Quizá pueden ser demasiados comentarios, pero mientras revisaba mi código me encontraba con elementos que ya no recordaba que hacían o porque los había usado. Espero esta sea una buena solución a corto plazo para ese problema.
--Para este punto ya pude hacer que me tome la fuente. Sigo sin saber cual era el problema pero esta vez las tomó. Quizá anteriormente también lo hacía pero no era capaz de darme cuenta de la diferencia de fuente. Espero que esas fuentes sean acordes. Sino será cuestión de seguir buscando. La tipografía nunca se me dió muy bien.
-
-Agregados:
--"variables" y nuevas funciones de normalize/reseteos.
--Encontré varios estilos que había aplicado los cuales no tenían funcionalidad. Estos los fuí eliminando porq al parecer habían otras secciones del código que aplicaban el efecto deseado.
--Aplicación de metodología BEM en algunos sectores del código. Particularmente me resulta cómodo en algunos sectores y en otras bastante incómodo de utilizar. Espero no sea un problema, pero tengo que seguir puliendo el nombrado de clases.
--Menu hamburguesa al header.
--Se aplicaron medias query y grid en todas las páginas según fuese necesario el uso.
--Descubri como superponer los textos sobre las imagen a través del uso de grid y la propiedad z-index para solucionar un problema con el menu contraible.
-(comentarios actualizados nuevamente el 23/05 esta sería la versión completa del trabajo hasta el momento)
+-El proyecto fue agregado a Git con exito.
 */
