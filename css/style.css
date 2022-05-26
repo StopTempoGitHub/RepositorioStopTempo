@@ -176,23 +176,31 @@ html {
     width: 100%;
 }
 .section__galeria {
-    margin-bottom: 5%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: auto; /*un total de 10 filas*/
     row-gap: .5rem; column-gap: 1rem;
 }
+.tituloGal {
+    grid-row: 1; grid-column: 1 / span 3;
+    text-align: center;
+}
 .gal1 {
-    grid-column: 3; grid-row: 1;
-}
-.gal2 {
-    grid-column: 1/span 2; grid-row: 1/span 2;
-}
-.gal3 {
     grid-column: 3; grid-row: 2;
 }
+.gal2 {
+    grid-column: 1/span 2; grid-row: 2/span 2;
+}
+.gal3 {
+    grid-column: 3; grid-row: 3;
+}
 .gal11 {
-    grid-column: 2/span 2; grid-row: 5/span 2;
+    grid-column: 2/span 2; grid-row: 6/span 2;
+}
+.espacioGal {
+    grid-column: 1 / span 3;
+    grid-row: 10;
+    margin-bottom: 5%;
 }
         /*Fin GALERIA*/
         
@@ -451,7 +459,80 @@ html {
     }
 
 }
-
+/*cuando la pantalla sea igual o superior a 561px se aplicaran estos cambios*/
+@media (min-width:561px) { 
+    .gal1 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal1:hover {
+        filter: drop-shadow(0px 0px 30px var(--colorWhite));
+        transform: translate(-10%, 10%) scale(1.15, 1.15);
+    }
+    .gal2 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal2:hover {
+        filter: drop-shadow(0px 0px 30px var(--colorWhite));
+        transform: translate(9%, 9%) scale(1.15, 1.15);
+    }
+    .gal3 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal3:hover {
+        filter: drop-shadow(0px 0px 30px var(--colorWhite));
+        transform: translate(-10%, 0%) scale(1.15, 1.15);
+    }
+    .gal4, .gal7, .gal10, .gal12, .gal13 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal4:hover, .gal7:hover, .gal10:hover, .gal12:hover, .gal13:hover {
+        filter: drop-shadow(0px 0px 30px var(--colorWhite));
+        transform: translate(10%, 0%) scale(1.15, 1.15);
+    }
+    .gal5, .gal8, .gal14 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal5:hover, .gal8:hover, .gal14:hover {
+        filter: drop-shadow(0px 0px 30px var(--colorWhite));
+        transform: translate(0%, 0%) scale(1.15, 1.15);
+    }
+    .gal6, .gal9, .gal15 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal6:hover, .gal9:hover, .gal15:hover {
+        filter: drop-shadow(0px 0px 30px var(--colorWhite));
+        transform: translate(-10%, 0%) scale(1.15, 1.15);
+    }
+    .gal11 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal11:hover {
+        filter: drop-shadow(0px 0px 30px var(--colorWhite));
+        transform: translate(-9%, 0%) scale(1.15, 1.15);
+    }
+    .gal16 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal16:hover {
+        filter: drop-shadow(0px 0px 20px var(--colorWhite));
+        transform: translate(10%, -10%) scale(1.15, 1.15);
+    }
+    .gal17 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal17:hover {
+        filter: drop-shadow(0px 0px 20px var(--colorWhite));
+        transform: translate(0%, -10%) scale(1.15, 1.15);
+    }
+    .gal18 {
+        transition: filter .2s, transform .2s;
+    }
+    .gal18:hover {
+        filter: drop-shadow(0px 0px 20px var(--colorWhite));
+        transform: translate(-10%, -10%) scale(1.15, 1.15);
+    }
+}
+/*cuando la pantalla sea igual o inferior a 560px se aplicaran estos cambios*/
 @media (max-width:560px) {
     /*header*/
     .header__logo img {
@@ -473,21 +554,27 @@ html {
 .section__galeria {
     margin-bottom: 5%;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     row-gap: 1rem;
 }
-.gal1 {
-    grid-column: 1; grid-row: 1;
+.tituloGal {
+    grid-column: 1 / span 1;
 }
-.gal2 {
+.gal1 {
     grid-column: 1; grid-row: 2;
 }
-.gal3 {
+.gal2 {
     grid-column: 1; grid-row: 3;
 }
+.gal3 {
+    grid-column: 1; grid-row: 4;
+}
 .gal11 {
-    grid-column: 1; grid-row: 11;
+    grid-column: 1; grid-row: 12;
+}
+.espacioGal {
+    grid-column: 1;
 }
     /*footer*/
     .footer {
@@ -516,4 +603,7 @@ html {
 -El proyecto fue agregado a Git con exito.
 -Separamos el texto en Sobre Mi del footer.
 -Modificamos el formulario. Cambios en las mediasquery para corregir tamaños del mismo y eliminación de código innecesario.
+-Agregué transiciones a todas las imágenes. Particularmente intenté primero agregar las transiciones a traves de las etiquetas generales para ahorrar lineas de código. Sin embargo, inclusive utilizando la clase "section_galeria li" me daba errores/improlijidades a la hora de desplegar la animacion/transición. Por ejemplo, la sombra de la imagen activa se proyectaba por detras de una imagen inactiva. Del único modo que logré hacer que la imagen hover se posicione siempre por encima con su sombra, fue a través de su propia clase: gal1, etc.
+-Las transiciones en las imágenes fueron aplicadas en un mediaquery para que solo sean aplicadas cuando la pantalla sea superior a 561px y por tanto solo se apliquen en el formato cuadricula.
+-Agregue un span con el código &nbsp; para poder emprolijar el sombreado en el margen inferior al hacer hover. 
 */
