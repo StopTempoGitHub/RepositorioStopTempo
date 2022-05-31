@@ -41,29 +41,40 @@
         </nav>
 
         <!-- A partir de acá tendrías el menu de nav BOOTSTRAP -->
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="p-4">
-                <ul class="header__nav--menu d-flex justify-content-center"> 
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./paginas/galeria.html">Galería</a></li>
-                    <li><a href="./paginas/servicios.html">Servicios</a></li>
-                    <li><a href="./paginas/sobreMi.html">Sobre mi</a></li>
-                    <li><a href="./paginas/contacto.html">Contacto</a></li>
-                </ul>
-              <span class="text-muted"></span>
-            </div>
-        </div>
-        <nav class="navbar navbar-dark d-flex justify-content-center">
-            <picture class="header__logo"> <!--Imagen con link a Home-->
-                <a href="./index.html"><img src="./imagenes/logo.png" alt="Logo de la empresa"></a>
-            </picture>
-            <div class="container-fluid d-flex justify-content-center">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon" style="font-size: 2em;"></span>
+        <nav class="navbar d-flex justify-content-center">
+            <div class="container-fluid">
+                <picture class="header__logo"> <!--Imagen con link a Home-->
+                    <a href="./index.html"><img src="./imagenes/logo.png" alt="Logo de la empresa"></a>
+                </picture>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span><img style="width: 50px; height: 50px; border-radius: 3px;" src="./imagenes/menuHambur.png" alt="menu hamburguesa"></span>
               </button>
+              <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title fs-1 text-light" id="offcanvasNavbarLabel">Menu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-2 text-warning" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-2 text-light" href="./paginas/galeria.html">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-2 text-light" href="./paginas/servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-2 text-light" href="./paginas/sobreMi.html">Sobre mi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-2 text-light" href="./paginas/contacto.html">Contacto</a>
+                    </li>
+                </div>
+              </div>
             </div>
-        </nav>-->
-
+          </nav>
     </header>
     <!-- FIN DE ENCABEZADO DE LA PÁGINA-->
               
