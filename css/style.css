@@ -5,7 +5,6 @@ font-family: 'Vollkorn SC', serif;*/
 
 
 
-
 /* VARIABLES */
 :root {
     /* Colores */
@@ -21,12 +20,12 @@ font-family: 'Vollkorn SC', serif;*/
     --fontOpen: 'Open Sans', sans-serif;
 
     /*Font Sizes*/
-    --textXlarge: 8em; /*80px*/
-    --textLarge: 5.2em; /*52px*/
-    --textMedium: 3em; /*30px*/
-    --textBase: 2.4em; /*24px*/
-    --textSmall: 2em; /*20px*/
-    --textXsmall: 1.6em; /*16px*/
+    --textXlarge: 8em; 
+    --textLarge: 5.2em; 
+    --textMedium: 3em; 
+    --textBase: 2.4em; 
+    --textSmall: 2em; 
+    --textXsmall: 1.6em; 
     --textXxsmall: 1em;
 }
 /* Fin VARIABLES */
@@ -139,12 +138,13 @@ html {
 .descripcionStyles {
     color: var(--colorWhite);
     font-family: var(--fontOpen);
-    font-size: var(--textSmall);
+    font-size: var(--textXsmall);
+    text-indent: 20px;
 }
+.descripcionStyles p::first-letter {
+    font-size: var(--textXsmall);
+}    
     /*Fin Estilos de Fuente del Main*/
-    /*Position: relative para texto e imagenes*/
-
-    /*Fin Position: relative para texto e imagenes*/
 
         /*HOME*/
 .pictureHome img {
@@ -226,11 +226,22 @@ html {
     z-index: -2;
 }
 .descripcionServicios {
+    transform: translate(0rem, -10rem);
     margin-left: 2rem;
     grid-column: 1;
     grid-row: 2 / span 2;
     z-index: -1;
+    text-align: center;
+    justify-content: end;
+    align-items: flex-end;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(8, auto);
 }
+.ico {
+    width: 6rem;
+}
+
         /*Fin SERVICIOS*/
 
         /*SOBRE MI*/
@@ -241,7 +252,6 @@ html {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    text-align: end;
 }
 .pictSobre{
     grid-column: 1 / span 3;
@@ -249,12 +259,15 @@ html {
     z-index: -3;
 }
 .tituloSobre {
+    text-align: end;
     margin-top: 1.6em; margin-right: .2em;
     grid-column: 3;
     grid-row: 1;
     z-index: -2;
 }
 .descripcionSobre {
+    text-align: justify;
+    width: 45rem;
     margin-right: 2rem; margin-bottom: 3rem;
     grid-column: 3;
     grid-row: 3;
@@ -283,6 +296,9 @@ html {
     grid-row: 1;
     z-index: -2;
 }
+.tituloContacto:hover {
+    background-color: red;
+}
 .formularioContacto {
     margin-left: 2rem; margin-bottom: 3rem;
     grid-column: 1 / span 2;
@@ -290,7 +306,7 @@ html {
     z-index: -1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
+    grid-template-rows: 3rem 3rem 3rem 8rem 3rem;
     row-gap: 1em; column-gap: 1em;
 }
 .nombre {
@@ -306,6 +322,7 @@ html {
     grid-row: 4 / span 2; grid-column: 1 / span 2;
 }
 .enviar {
+    border-radius: 5em;
     grid-row: 5; grid-column: 3;
 }
         /*Fin CONTACTO*/
@@ -340,6 +357,16 @@ html {
     margin-left: 1rem;
     font-family: var(--fontOpen);
 }
+.footerEnlace a {
+    color: var(--colorTres);
+    text-decoration: none;
+}
+.footerEnlace a:hover {
+    color: var(--colorWhite);
+    text-decoration: underline;
+}
+
+
 /*** FIN PIE DE PÁGINA ***/
 
 
@@ -429,12 +456,24 @@ html {
         text-align: center;
         margin-bottom: 15%;
     }
+    .sectionContacto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15%;
+    }
     .tituloServicios, .tituloContacto {
         margin-top: 0; margin-left: 0;
     }
     .descripcionServicios {
+        transform: none;
+        justify-content: center;
         width: 70%; 
         margin-top: 0; margin-left: 0;
+    }
+    .descripcionServicios p, .ico {
+        padding-top: 2em;
     }
     .formularioContacto {
         display: grid;
@@ -550,6 +589,9 @@ html {
     .descripcionStyles {
         font-size: var(--textXxsmall);
     }
+    .descripcionServicios .ico {
+        width: 4rem;
+    }
     /*main galeria*/
 .section__galeria {
     margin-bottom: 5%;
@@ -600,10 +642,7 @@ html {
 
 
 /*COMENTARIOS A TUTORÍA
--El proyecto fue agregado a Git con exito.
--Separamos el texto en Sobre Mi del footer.
--Modificamos el formulario. Cambios en las mediasquery para corregir tamaños del mismo y eliminación de código innecesario.
--Agregué transiciones a todas las imágenes. Particularmente intenté primero agregar las transiciones a traves de las etiquetas generales para ahorrar lineas de código. Sin embargo, inclusive utilizando la clase "section_galeria li" me daba errores/improlijidades a la hora de desplegar la animacion/transición. Por ejemplo, la sombra de la imagen activa se proyectaba por detras de una imagen inactiva. Del único modo que logré hacer que la imagen hover se posicione siempre por encima con su sombra, fue a través de su propia clase: gal1, etc.
--Las transiciones en las imágenes fueron aplicadas en un mediaquery para que solo sean aplicadas cuando la pantalla sea superior a 561px y por tanto solo se apliquen en el formato cuadricula.
--Agregue un span con el código &nbsp; para poder emprolijar el sombreado en el margen inferior al hacer hover. 
+-En el footer el enlace "volver al principio" fue rediseñado.
+-Se cambiaron los textos de las páginas. 
+-Ya esta enlazado todo Sass y listo para su uso. Pero no esta en esta entrega el pasaje del código.
 */
