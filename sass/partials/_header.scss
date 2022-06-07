@@ -1,0 +1,64 @@
+/*** HEADER ***/
+.header {
+    /* BackGround Header */
+    background: linear-gradient(173deg, rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
+    border-bottom: solid black;
+    /* FIN BackGround Header */
+    /* Flex al Header */
+    display: flex;
+    flex-direction: row; /*Con esto el menu se posiciona al lado del logo*/
+    justify-content: space-between; /*Con esto logro que el logo quede a la izquierda y el menu a la derecha*/
+    align-items: flex-end; /*pone los elementos en la linea inferior del header*/
+    /* Fin Flex al Header*/
+    padding: 0rem 0rem 0rem 1rem; /*el orden es: top,right, bottom, left*/
+    
+    /* LOGO */
+    .header__logo img {
+        width: 200px;
+    }
+    /* Fin LOGO */
+    
+    /* MENU de nav*/
+    .header__nav--menu {
+        list-style: none; /*quita los puntos de mi lista*/
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem; /*Separa un poco el menu de la linea inferior del header*/
+        margin-right: 3rem;
+        
+        li {
+            font-family: $fontOpen;
+            font-size: $textMedium;
+            margin-right: 1em; /*me da distancia entre los elementos*/
+        }
+        li:last-child {
+            background-color: $colorDos;
+            border: $colorDos solid 2px;
+            padding: 0.30rem 0.75rem;
+            border-radius: 0.6rem;
+            /*todo esto para darle apariencia de botón a "contacto"*/
+        }
+        li:last-child:hover {
+            background: transparent; /*transparenta el fondo de contacto al pasar el mouse*/
+        }
+        a {
+            color: $colorWhite; /*color de los enlaces*/
+            text-decoration: none; /*quita el subrayado de los enlaces*/
+        }
+        a:hover { /*pone color al pasar el mouse*/
+            color: $colorDos;
+        }
+    }
+    /*Empezamos a diseñar el menu hambuerguesa*/
+    .menuHambur img {
+        width: 50px;
+        height: 50px;
+        border-radius: 3px;
+    }
+    .menuHambur, #check {
+        display: none;
+    }
+    /* Fin MENU de nav */
+}
+ /*** FIN HEADER ***/
+

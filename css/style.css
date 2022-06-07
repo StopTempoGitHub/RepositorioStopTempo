@@ -1,231 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Vollkorn&family=Vollkorn+SC&display=swap');
+@charset "UTF-8";
+/*** Misc ***/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Vollkorn&family=Vollkorn+SC&display=swap");
 /*font-family: 'Open Sans', sans-serif;
 font-family: 'Vollkorn', serif;
 font-family: 'Vollkorn SC', serif;*/
-
-
-
 /* VARIABLES */
-:root {
-    /* Colores */
-    --colorUno: #FFCD00;
-    --colorDos: #9E5D00;
-    --colorTres: #251605;
-    --colorWhite: #F2F1ED;
-    --colorBlack: #000000;
-    
-    /*Fonts*/
-    --fontVollSc: 'Vollkorn SC', serif;
-    --fontVoll: 'Vollkorn', serif;
-    --fontOpen: 'Open Sans', sans-serif;
-
-    /*Font Sizes*/
-    --textXlarge: 8em; 
-    --textLarge: 5.2em; 
-    --textMedium: 3em; 
-    --textBase: 2.4em; 
-    --textSmall: 2em; 
-    --textXsmall: 1.6em; 
-    --textXxsmall: 1em;
-}
+/* Colores */
+/*Fonts*/
+/*Font Sizes*/
 /* Fin VARIABLES */
-
-
-
-
-
 /*NORMALIZE (Qué son las normalizaciones? Son reseteos que le hacemos a nuestras etiquetas)*/
-* { /*Esta es la más básica de las normalizaciones. Usada para eliminar los posibles espaciados del navegador. Muchos navegadores establecen un margen por defecto en sus páginas. Con el reseteo de margin y padding eliminamos este comportamiento del navegador para luego determinar nosotros el comportamiento de los elementos*/
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden; /*desaparece el desplazamiento horizontal y corrige un problema con las imagenes de fondo haciendo scroll horizontal*/
-}
+* {
+  /*Esta es la más básica de las normalizaciones. Usada para eliminar los posibles espaciados del navegador. Muchos navegadores establecen un margen por defecto en sus páginas. Con el reseteo de margin y padding eliminamos este comportamiento del navegador para luego determinar nosotros el comportamiento de los elementos*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /*desaparece el desplazamiento horizontal y corrige un problema con las imagenes de fondo haciendo scroll horizontal*/ }
 
-html { 
-    font-size: 62.5%; /*Esta define el tamaño de los "em" y "rem" a 10px. "rem" es una unidad de medida que siempre va a hacer caso a la medida establecida en el html. "em" es una unidad de medida relativa; hará caso a la medida establecida en el html, salvo que el padre tenga otra medida establecida*/
-}
+html {
+  font-size: 62.5%;
+  /*Esta define el tamaño de los "em" y "rem" a 10px. "rem" es una unidad de medida que siempre va a hacer caso a la medida establecida en el html. "em" es una unidad de medida relativa; hará caso a la medida establecida en el html, salvo que el padre tenga otra medida establecida*/ }
+
 /*Fin NORMALIZE*/
-
-
-
-
-
+/*** Partials ***/
 /*** BODY ***/
-    /* Fondo de página */
+/* Fondo de página */
 .body {
-    background-color: var(--colorBlack);
-}
-    /* Fin fondo de página */
+  background-color: #000000; }
+
+/* Fin fondo de página */
 /*** FIN BODY ***/
-
-
-
-
-
 /*** HEADER ***/
 .header {
-    /* BackGround Header */
-    background: linear-gradient(173deg, rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
-    border-bottom: solid black;
-    /* FIN BackGround Header */
-    /* Flex al Header */
-    display: flex;
-    flex-direction: row; /*Con esto el menu se posiciona al lado del logo*/
-    justify-content: space-between; /*Con esto logro que el logo quede a la izquierda y el menu a la derecha*/
-    align-items: flex-end; /*pone los elementos en la linea inferior del header*/
-    /* Fin Flex al Header*/
-    padding: 0rem 0rem 0rem 1rem; /*el orden es: top,right, bottom, left*/
-}
-    /* LOGO */
-.header__logo img {
-    width: 200px;
-}
-    /* Fin LOGO */ 
-    /* MENU de nav*/
-.header__nav--menu {
-    list-style: none; /*quita los puntos de mi lista*/
+  /* BackGround Header */
+  background: linear-gradient(173deg, #fee214 6%, #934d08 43%, black 78%);
+  border-bottom: solid black;
+  /* FIN BackGround Header */
+  /* Flex al Header */
+  display: flex;
+  flex-direction: row;
+  /*Con esto el menu se posiciona al lado del logo*/
+  justify-content: space-between;
+  /*Con esto logro que el logo quede a la izquierda y el menu a la derecha*/
+  align-items: flex-end;
+  /*pone los elementos en la linea inferior del header*/
+  /* Fin Flex al Header*/
+  padding: 0rem 0rem 0rem 1rem;
+  /*el orden es: top,right, bottom, left*/
+  /* LOGO */
+  /* Fin LOGO */
+  /* MENU de nav*/
+  /*Empezamos a diseñar el menu hambuerguesa*/
+  /* Fin MENU de nav */ }
+  .header .header__logo img {
+    width: 200px; }
+  .header .header__nav--menu {
+    list-style: none;
+    /*quita los puntos de mi lista*/
     display: flex;
     flex-direction: row;
-    margin-bottom: 1rem; /*Separa un poco el menu de la linea inferior del header*/
-    margin-right: 3rem;
-}
-.header__nav--menu li {
-    font-family: var(--fontOpen);
-    font-size: var(--textMedium);
-    margin-right: 1em; /*me da distancia entre los elementos*/
-}
-.header__nav--menu li:last-child {
-    background-color: var(--colorDos);
-    border: var(--colorDos) solid 2px;
-    padding: 0.30rem 0.75rem;
-    border-radius: 0.6rem;
-    /*todo esto para darle apariencia de botón a "contacto"*/
-}
-.header__nav--menu li:last-child:hover {
-    background: transparent; /*transparenta el fondo de contacto al pasar el mouse*/
-}
-.header__nav--menu a {
-    color: var(--colorWhite); /*color de los enlaces*/
-    text-decoration: none; /*quita el subrayado de los enlaces*/
-}
-.header__nav--menu a:hover { /*pone color al pasar el mouse*/
-    color: var(--colorDos);
-}
-/*Empezamos a diseñar el menu hambuerguesa*/
-.menuHambur img {
+    margin-bottom: 1rem;
+    /*Separa un poco el menu de la linea inferior del header*/
+    margin-right: 3rem; }
+    .header .header__nav--menu li {
+      font-family: "Open Sans", sans-serif;
+      font-size: 3em;
+      margin-right: 1em;
+      /*me da distancia entre los elementos*/ }
+    .header .header__nav--menu li:last-child {
+      background-color: #9E5D00;
+      border: #9E5D00 solid 2px;
+      padding: 0.30rem 0.75rem;
+      border-radius: 0.6rem;
+      /*todo esto para darle apariencia de botón a "contacto"*/ }
+    .header .header__nav--menu li:last-child:hover {
+      background: transparent;
+      /*transparenta el fondo de contacto al pasar el mouse*/ }
+    .header .header__nav--menu a {
+      color: #F2F1ED;
+      /*color de los enlaces*/
+      text-decoration: none;
+      /*quita el subrayado de los enlaces*/ }
+    .header .header__nav--menu a:hover {
+      /*pone color al pasar el mouse*/
+      color: #9E5D00; }
+  .header .menuHambur img {
     width: 50px;
     height: 50px;
-    border-radius: 3px;
-}
-.menuHambur, #check {
-    display: none;
-}
-    /* Fin MENU de nav */
+    border-radius: 3px; }
+  .header .menuHambur, .header #check {
+    display: none; }
+
 /*** FIN HEADER ***/
+/*** PIE DE PÁGINA ***/
+.footer {
+  /* BackGround Footer */
+  background: linear-gradient(358deg, #fee214 6%, #934d08 43%, black 78%);
+  border-top: solid black 3px;
+  padding: 1rem;
+  /* FIN BackGround Footer */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end; }
+  .footer .footerInfo h2 {
+    /*Contactanos*/
+    color: #F2F1ED;
+    font-size: 3em;
+    font-family: "Vollkorn SC", serif; }
+  .footer p {
+    /*Wsp, Correo y Volver al principio*/
+    color: #F2F1ED;
+    font-size: 2em;
+    margin-left: 1rem;
+    font-family: "Open Sans", sans-serif; }
+  .footer .footerEnlace a {
+    color: #251605;
+    text-decoration: none; }
+  .footer .footerEnlace a:hover {
+    color: #F2F1ED;
+    text-decoration: underline; }
 
-
-
-
-
+/*** FIN PIE DE PÁGINA ***/
 /*** MAIN ***/
-    /*Estilos de Fuente del Main*/
+/*Estilos generales de las Fuentes del Main*/
 .tituloStyles {
-    color: var(--colorWhite);
-    font-family: var(--fontVollSc);
-    font-size: var(--textXlarge);
-}
-.descripcionStyles {
-    color: var(--colorWhite);
-    font-family: var(--fontOpen);
-    font-size: var(--textXsmall);
-    text-indent: 20px;
-}
-.descripcionStyles p::first-letter {
-    font-size: var(--textXsmall);
-}    
-    /*Fin Estilos de Fuente del Main*/
+  color: #F2F1ED;
+  font-family: "Vollkorn SC", serif;
+  font-size: 8em; }
 
-        /*HOME*/
-.pictureHome img {
-    width: 100%;
-}
+.descripcionStyles {
+  color: #F2F1ED;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6em;
+  text-indent: 20px; }
+  .descripcionStyles p::first-letter {
+    font-size: 1.6em; }
+
+/*Fin Estilos generales de las Fuentes del Main*/
+/*** Pages ***/
+/*HOME*/
 .sectionHome {
-    margin-bottom: 15%;
-    display: grid;
-    grid-template-areas: 'picture picture picture'
-                         'titulo titulo titulo'
-                         'descrip descrip descrip';
-}
-.pictureHome {
-    grid-area: picture;
-}
-.tituloHome {
+  margin-bottom: 15%;
+  display: grid;
+  grid-template-areas: 'picture picture picture' 'titulo titulo titulo' 'descrip descrip descrip'; }
+  .sectionHome .pictureHome {
+    grid-area: picture; }
+    .sectionHome .pictureHome img {
+      width: 100%; }
+  .sectionHome .tituloHome {
     grid-area: titulo;
-    text-align: center;
-}
-.descripcionHome {
+    text-align: center; }
+  .sectionHome .descripcionHome {
     grid-area: descrip;
     text-align: center;
-    margin-right: 20vw; margin-left: 20vw;
-}
-        /*Fin HOME*/
+    margin-right: 20vw;
+    margin-left: 20vw; }
 
-        /*GALERIA*/
-.section__galeria img {
-    width: 100%;
-}
+/*Fin HOME*/
+/*GALERIA*/
 .section__galeria {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto; /*un total de 10 filas*/
-    row-gap: .5rem; column-gap: 1rem;
-}
-.tituloGal {
-    grid-row: 1; grid-column: 1 / span 3;
-    text-align: center;
-}
-.gal1 {
-    grid-column: 3; grid-row: 2;
-}
-.gal2 {
-    grid-column: 1/span 2; grid-row: 2/span 2;
-}
-.gal3 {
-    grid-column: 3; grid-row: 3;
-}
-.gal11 {
-    grid-column: 2/span 2; grid-row: 6/span 2;
-}
-.espacioGal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  /*un total de 10 filas*/
+  row-gap: .5rem;
+  column-gap: 1rem; }
+  .section__galeria img {
+    width: 100%; }
+  .section__galeria .tituloGal {
+    grid-row: 1;
+    grid-column: 1 / span 3;
+    text-align: center; }
+  .section__galeria .gal1 {
+    grid-column: 3;
+    grid-row: 2; }
+  .section__galeria .gal2 {
+    grid-column: 1/span 2;
+    grid-row: 2/span 2; }
+  .section__galeria .gal3 {
+    grid-column: 3;
+    grid-row: 3; }
+  .section__galeria .gal11 {
+    grid-column: 2/span 2;
+    grid-row: 6/span 2; }
+  .section__galeria .espacioGal {
     grid-column: 1 / span 3;
     grid-row: 10;
-    margin-bottom: 5%;
-}
-        /*Fin GALERIA*/
-        
-        /*SERVICIOS*/
-.pictServicios img {
-    transform: translate(11%);
-    width: 100%;
-}
+    margin-bottom: 5%; }
+
+/*Fin GALERIA*/
+/*SERVICIOS*/
 .sectionServicios {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto);
-}
-.pictServicios{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto); }
+  .sectionServicios .pictServicios {
     grid-column: 1 / span 3;
     grid-row: 1 / span 3;
-    z-index: -3;
-}
-.tituloServicios {
-    margin-left: 2rem; margin-top: 5rem;
+    z-index: -3; }
+    .sectionServicios .pictServicios img {
+      transform: translate(11%);
+      width: 100%; }
+  .sectionServicios .tituloServicios {
+    margin-left: 2rem;
+    margin-top: 5rem;
     grid-column: 1;
     grid-row: 1;
-    z-index: -2;
-}
-.descripcionServicios {
+    z-index: -2; }
+  .sectionServicios .descripcionServicios {
     transform: translate(0rem, -10rem);
     margin-left: 2rem;
     grid-column: 1;
@@ -236,413 +220,300 @@ html {
     align-items: flex-end;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(8, auto);
-}
-.ico {
-    width: 6rem;
-}
+    grid-template-rows: repeat(8, auto); }
+    .sectionServicios .descripcionServicios .ico {
+      width: 6rem; }
 
-        /*Fin SERVICIOS*/
-
-        /*SOBRE MI*/
-.pictSobre img {
-    width: 100%;
-}
+/*Fin SERVICIOS*/
+/*SOBRE MI*/
 .sectionSobre {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto);
-}
-.pictSobre{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto); }
+  .sectionSobre .pictSobre {
     grid-column: 1 / span 3;
     grid-row: 1 / span 3;
-    z-index: -3;
-}
-.tituloSobre {
+    z-index: -3; }
+    .sectionSobre .pictSobre img {
+      width: 100%; }
+  .sectionSobre .tituloSobre {
     text-align: end;
-    margin-top: 1.6em; margin-right: .2em;
+    margin-top: 1.6em;
+    margin-right: .2em;
     grid-column: 3;
     grid-row: 1;
-    z-index: -2;
-}
-.descripcionSobre {
+    z-index: -2; }
+  .sectionSobre .descripcionSobre {
     text-align: justify;
     width: 45rem;
-    margin-right: 2rem; margin-bottom: 3rem;
+    margin-right: 2rem;
+    margin-bottom: 3rem;
     grid-column: 3;
     grid-row: 3;
-    z-index: -1;
-}   
-        /*Fin SOBRE MI*/
+    z-index: -1; }
 
-        /*CONTACTO*/
-.pictContacto img {
-    transform: translate(9%);
-    width: 100%;
-}
+/*Fin SOBRE MI*/
+/*CONTACTO*/
 .sectionContacto {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: repeat(3, auto);
-}
-.pictContacto {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: repeat(3, auto); }
+  .sectionContacto .pictContacto {
     grid-column: 1 / span 3;
     grid-row: 1 / span 3;
-    z-index: -3;
-}
-.tituloContacto {
-    margin-top: 1em; margin-left: .2em;
+    z-index: -3; }
+    .sectionContacto .pictContacto img {
+      transform: translate(9%);
+      width: 100%; }
+  .sectionContacto .tituloContacto {
+    margin-top: 1em;
+    margin-left: .2em;
     grid-column: 1;
     grid-row: 1;
-    z-index: -2;
-}
-.tituloContacto:hover {
-    background-color: red;
-}
-.formularioContacto {
-    margin-left: 2rem; margin-bottom: 3rem;
+    z-index: -2; }
+  .sectionContacto .formularioContacto {
+    margin-left: 2rem;
+    margin-bottom: 3rem;
     grid-column: 1 / span 2;
     grid-row: 3;
     z-index: -1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 3rem 3rem 3rem 8rem 3rem;
-    row-gap: 1em; column-gap: 1em;
-}
-.nombre {
-    grid-row: 1; grid-column: 1;
-}
-.apellido {
-    grid-row: 2; grid-column: 1;
-}
-.correo {
-    grid-row: 3; grid-column: 1;
-}
-.pregunta {
-    grid-row: 4 / span 2; grid-column: 1 / span 2;
-}
-.enviar {
-    border-radius: 5em;
-    grid-row: 5; grid-column: 3;
-}
-        /*Fin CONTACTO*/
-/*** Fin MAIN ***/
+    row-gap: 1em;
+    column-gap: 1em; }
+    .sectionContacto .formularioContacto .nombre {
+      grid-row: 1;
+      grid-column: 1; }
+    .sectionContacto .formularioContacto .apellido {
+      grid-row: 2;
+      grid-column: 1; }
+    .sectionContacto .formularioContacto .correo {
+      grid-row: 3;
+      grid-column: 1; }
+    .sectionContacto .formularioContacto .pregunta {
+      grid-row: 4 / span 2;
+      grid-column: 1 / span 2; }
+    .sectionContacto .formularioContacto .enviar {
+      border-radius: 5em;
+      grid-row: 5;
+      grid-column: 3; }
 
-
-
-
-
-/*** PIE DE PÁGINA ***/
-.footer {
-    /* BackGround Footer */
-    background: linear-gradient(358deg, rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
-    border-top: solid black 3px;
-    padding: 1rem;
-    /* FIN BackGround Footer */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-.footer h2 {
-    /*Contactanos*/ 
-    color: var(--colorWhite);
-    font-size: var(--textMedium);
-    font-family: var(--fontVollSc);
-}
-.footer p { 
-    /*Wsp, Correo y Volver al principio*/
-    color: var(--colorWhite);
-    font-size: var(--textSmall);
-    margin-left: 1rem;
-    font-family: var(--fontOpen);
-}
-.footerEnlace a {
-    color: var(--colorTres);
-    text-decoration: none;
-}
-.footerEnlace a:hover {
-    color: var(--colorWhite);
-    text-decoration: underline;
-}
-
-
-/*** FIN PIE DE PÁGINA ***/
-
-
-
-
+/*Fin CONTACTO*/
+/*** Medias Query ***/
 /*** MEDIAS QUERY ***/
-@media (max-width:1428px){
-    .tituloSobre, .tituloContacto {
-        font-size: var(--textLarge);
-    }
-    .descripcionSobre {
-        font-size: var(--textXsmall);
-    }
-    
-}
-@media (max-width:1218px){
-    .tituloServicios {        
-        font-size: var(--textLarge);
-    }
-    .descripcionServicios {
-        font-size: var(--textXsmall);
-    }
-    /*Sobre Mi*/
-    .pictSobre img {
-        width: 100%;
-    }
-    .sectionSobre {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 15%;
-    }
-    .tituloSobre {
-        margin-top: 0; margin-left: 0;
-    }
-    .descripcionSobre {
-        width: 70%; 
-        margin-top: 0; margin-left: 0;
-    }
-}
+@media (max-width: 1428px) {
+  .tituloSobre {
+    font-size: 5.2em; }
+  .tituloContacto {
+    font-size: 5.2em; }
+  .descripcionSobre {
+    font-size: 1.6em; } }
 
-@media (max-width:968px){
-    /* Menu Hamburguesa */
-    .checkbtn {
-        display: block;
-        cursor: pointer;
-    }
-    .menuHambur {
-        display: block; /*hace aparecer el menuHambur*/
-        position: absolute; /*acomoda el menuHambur con respecto al menu. Con absolute lo dejo quieto en el header.*/
-        top: 8.5rem; right: 2rem ; /*separa el menuHambur del top y un poco del borde derecho*/
-    }
-    .header__nav--menu {
-        display: block; /*posiciona mi menu verticalmente*/
-        position: absolute;
-        left: -100%;
-        background: var(--colorBlack);
-        width: 100%;
-        height: 100vh; /*con esto estamos diciendo que cuando se muestre el menu de nav, ocupe todo el ancho y alto de la pantalla*/
-        right: 0;/*para que el menu se alinee a la derecha*/
-    }
-    .header__nav--menu li { /*modificamos los elementos de la lista*/
-        padding: 2rem; /*separa los elementos entre si verticalmente*/
-        display: flex;
-        justify-content: center; /*me los alinea al centro*/
-        margin: 0;
-    }
-    .header__nav--menu li:last-child {
-        background: none;
-        padding: 0.30rem 0.75rem;
-    }
-    #check:checked ~ ul { /*checked para indicar que se hará cada vez que le hagamos click. ~ (alt+126) para seleccionar todos elementos dentro del contenedor padre (ul para este caso)*/
-        left: 0;
-        transition: all 0.25s;
-    }
-    /* FIN Menu Hamburguesa*/
-    /*Servicios y contacto*/
-    .pictServicios img, .pictContacto img {
-        transform: none;
-        width: 100%;
-    }
-    .sectionServicios, .sectionContacto {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 15%;
-    }
-    .sectionContacto {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 15%;
-    }
-    .tituloServicios, .tituloContacto {
-        margin-top: 0; margin-left: 0;
-    }
-    .descripcionServicios {
-        transform: none;
-        justify-content: center;
-        width: 70%; 
-        margin-top: 0; margin-left: 0;
-    }
-    .descripcionServicios p, .ico {
-        padding-top: 2em;
-    }
-    .formularioContacto {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(7, 3rem);
-        row-gap: 1em; column-gap: 1em;
-    }
-    .nombre {
-        grid-column: 2 / span 3;
-    }
-    .apellido {
-        grid-column: 2 / span 3;
-    }
-    .correo {
-        grid-column: 2 / span 3;
-    }
-    .pregunta {
-        grid-row: 4 / span 3; grid-column: 2 / span 3;
-    }
-    .enviar {
-        grid-row: 7; grid-column: 3;
-    }
+@media (max-width: 1218px) {
+  .sectionServicios .tituloServicios {
+    font-size: 5.2em; }
+  .sectionServicios .descripcionServicios {
+    font-size: 1.6em; }
+  /*Sobre Mi*/
+  .sectionSobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15%; }
+    .sectionSobre .pictSobre img {
+      width: 100%; }
+    .sectionSobre .tituloSobre {
+      margin-top: 0;
+      margin-left: 0; }
+    .sectionSobre .descripcionSobre {
+      width: 70%;
+      margin-top: 0;
+      margin-left: 0; } }
 
-}
+@media (max-width: 968px) {
+  /* Menu Hamburguesa */
+  .header .header__nav .checkbtn {
+    display: block;
+    cursor: pointer; }
+    .header .header__nav .checkbtn .menuHambur {
+      display: block;
+      /*hace aparecer el menuHambur*/
+      position: absolute;
+      /*acomoda el menuHambur con respecto al menu. Con absolute lo dejo quieto en el header.*/
+      top: 8.5rem;
+      right: 2rem;
+      /*separa el menuHambur del top y un poco del borde derecho*/ }
+  .header .header__nav .header__nav--menu {
+    display: block;
+    /*posiciona mi menu verticalmente*/
+    position: absolute;
+    left: -100%;
+    background: #000000;
+    width: 100%;
+    height: 100vh;
+    /*con esto estamos diciendo que cuando se muestre el menu de nav, ocupe todo el ancho y alto de la pantalla*/
+    right: 0;
+    /*para que el menu se alinee a la derecha*/ }
+    .header .header__nav .header__nav--menu li {
+      /*modificamos los elementos de la lista*/
+      padding: 2rem;
+      /*separa los elementos entre si verticalmente*/
+      display: flex;
+      justify-content: center;
+      /*me los alinea al centro*/
+      margin: 0; }
+    .header .header__nav .header__nav--menu li:last-child {
+      background: none;
+      padding: 0.30rem 0.75rem; }
+  .header .header__nav #check:checked ~ ul {
+    /*checked para indicar que se hará cada vez que le hagamos click. ~ (alt+126) para seleccionar todos elementos dentro del contenedor padre (ul para este caso)*/
+    left: 0;
+    transition: all 0.25s; }
+  /* FIN Menu Hamburguesa*/
+  /*Servicios y contacto*/
+  .sectionServicios, .sectionContacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15%; }
+    .sectionServicios img, .sectionContacto img {
+      transform: none;
+      width: 100%; }
+    .sectionServicios .tituloServicios, .sectionServicios .tituloContacto, .sectionContacto .tituloServicios, .sectionContacto .tituloContacto {
+      margin-top: 0;
+      margin-left: 0; }
+    .sectionServicios .descripcionServicios, .sectionContacto .descripcionServicios {
+      transform: none;
+      justify-content: center;
+      width: 70%;
+      margin-top: 0;
+      margin-left: 0; }
+      .sectionServicios .descripcionServicios p, .sectionServicios .descripcionServicios .ico, .sectionContacto .descripcionServicios p, .sectionContacto .descripcionServicios .ico {
+        padding-top: 2em; }
+    .sectionServicios .formularioContacto, .sectionContacto .formularioContacto {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(7, 3rem);
+      row-gap: 1em;
+      column-gap: 1em; }
+      .sectionServicios .formularioContacto .nombre, .sectionContacto .formularioContacto .nombre {
+        grid-column: 2 / span 3; }
+      .sectionServicios .formularioContacto .apellido, .sectionContacto .formularioContacto .apellido {
+        grid-column: 2 / span 3; }
+      .sectionServicios .formularioContacto .correo, .sectionContacto .formularioContacto .correo {
+        grid-column: 2 / span 3; }
+      .sectionServicios .formularioContacto .pregunta, .sectionContacto .formularioContacto .pregunta {
+        grid-row: 4 / span 3;
+        grid-column: 2 / span 3; }
+      .sectionServicios .formularioContacto .enviar, .sectionContacto .formularioContacto .enviar {
+        grid-row: 7;
+        grid-column: 3; } }
+
 /*cuando la pantalla sea igual o superior a 561px se aplicaran estos cambios*/
-@media (min-width:561px) { 
-    .gal1 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal1:hover {
-        filter: drop-shadow(0px 0px 30px var(--colorWhite));
-        transform: translate(-10%, 10%) scale(1.15, 1.15);
-    }
-    .gal2 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal2:hover {
-        filter: drop-shadow(0px 0px 30px var(--colorWhite));
-        transform: translate(9%, 9%) scale(1.15, 1.15);
-    }
-    .gal3 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal3:hover {
-        filter: drop-shadow(0px 0px 30px var(--colorWhite));
-        transform: translate(-10%, 0%) scale(1.15, 1.15);
-    }
-    .gal4, .gal7, .gal10, .gal12, .gal13 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal4:hover, .gal7:hover, .gal10:hover, .gal12:hover, .gal13:hover {
-        filter: drop-shadow(0px 0px 30px var(--colorWhite));
-        transform: translate(10%, 0%) scale(1.15, 1.15);
-    }
-    .gal5, .gal8, .gal14 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal5:hover, .gal8:hover, .gal14:hover {
-        filter: drop-shadow(0px 0px 30px var(--colorWhite));
-        transform: translate(0%, 0%) scale(1.15, 1.15);
-    }
-    .gal6, .gal9, .gal15 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal6:hover, .gal9:hover, .gal15:hover {
-        filter: drop-shadow(0px 0px 30px var(--colorWhite));
-        transform: translate(-10%, 0%) scale(1.15, 1.15);
-    }
-    .gal11 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal11:hover {
-        filter: drop-shadow(0px 0px 30px var(--colorWhite));
-        transform: translate(-9%, 0%) scale(1.15, 1.15);
-    }
-    .gal16 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal16:hover {
-        filter: drop-shadow(0px 0px 20px var(--colorWhite));
-        transform: translate(10%, -10%) scale(1.15, 1.15);
-    }
-    .gal17 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal17:hover {
-        filter: drop-shadow(0px 0px 20px var(--colorWhite));
-        transform: translate(0%, -10%) scale(1.15, 1.15);
-    }
-    .gal18 {
-        transition: filter .2s, transform .2s;
-    }
-    .gal18:hover {
-        filter: drop-shadow(0px 0px 20px var(--colorWhite));
-        transform: translate(-10%, -10%) scale(1.15, 1.15);
-    }
-}
+@media (min-width: 561px) {
+  .section__galeria .gal1 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal1:hover {
+    filter: drop-shadow(0px 0px 30px #F2F1ED);
+    transform: translate(-10%, 10%) scale(1.15, 1.15); }
+  .section__galeria .gal2 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal2:hover {
+    filter: drop-shadow(0px 0px 30px #F2F1ED);
+    transform: translate(9%, 9%) scale(1.15, 1.15); }
+  .section__galeria .gal3 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal3:hover {
+    filter: drop-shadow(0px 0px 30px #F2F1ED);
+    transform: translate(-10%, 0%) scale(1.15, 1.15); }
+  .section__galeria .gal4, .section__galeria .gal7, .section__galeria .gal10, .section__galeria .gal12, .section__galeria .gal13 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal4:hover, .section__galeria .gal7:hover, .section__galeria .gal10:hover, .section__galeria .gal12:hover, .section__galeria .gal13:hover {
+    filter: drop-shadow(0px 0px 30px #F2F1ED);
+    transform: translate(10%, 0%) scale(1.15, 1.15); }
+  .section__galeria .gal5, .section__galeria .gal8, .section__galeria .gal14 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal5:hover, .section__galeria .gal8:hover, .section__galeria .gal14:hover {
+    filter: drop-shadow(0px 0px 30px #F2F1ED);
+    transform: translate(0%, 0%) scale(1.15, 1.15); }
+  .section__galeria .gal6, .section__galeria .gal9, .section__galeria .gal15 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal6:hover, .section__galeria .gal9:hover, .section__galeria .gal15:hover {
+    filter: drop-shadow(0px 0px 30px #F2F1ED);
+    transform: translate(-10%, 0%) scale(1.15, 1.15); }
+  .section__galeria .gal11 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal11:hover {
+    filter: drop-shadow(0px 0px 30px #F2F1ED);
+    transform: translate(-9%, 0%) scale(1.15, 1.15); }
+  .section__galeria .gal16 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal16:hover {
+    filter: drop-shadow(0px 0px 20px #F2F1ED);
+    transform: translate(10%, -10%) scale(1.15, 1.15); }
+  .section__galeria .gal17 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal17:hover {
+    filter: drop-shadow(0px 0px 20px #F2F1ED);
+    transform: translate(0%, -10%) scale(1.15, 1.15); }
+  .section__galeria .gal18 {
+    transition: filter .2s, transform .2s; }
+  .section__galeria .gal18:hover {
+    filter: drop-shadow(0px 0px 20px #F2F1ED);
+    transform: translate(-10%, -10%) scale(1.15, 1.15); } }
+
 /*cuando la pantalla sea igual o inferior a 560px se aplicaran estos cambios*/
-@media (max-width:560px) {
-    /*header*/
-    .header__logo img {
-        width: 170px;
-    }
-    .menuHambur img {
-        width: 35px;
-        height: 35px;
-        border-radius: 3px;
-    }
-    /*main*/  
-    .tituloStyles {
-        font-size: var(--textMedium);
-    }
-    .descripcionStyles {
-        font-size: var(--textXxsmall);
-    }
-    .descripcionServicios .ico {
-        width: 4rem;
-    }
-    /*main galeria*/
-.section__galeria {
+@media (max-width: 560px) {
+  /*header*/
+  .header .header__logo img {
+    width: 170px; }
+  .header .menuHambur img {
+    width: 35px;
+    height: 35px;
+    border-radius: 3px; }
+  /*main*/
+  .tituloStyles {
+    font-size: 3em; }
+  .descripcionStyles {
+    font-size: 1em; }
+  .descripcionServicios .ico {
+    width: 4rem; }
+  /*main galeria*/
+  .section__galeria {
     margin-bottom: 5%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    row-gap: 1rem;
-}
-.tituloGal {
-    grid-column: 1 / span 1;
-}
-.gal1 {
-    grid-column: 1; grid-row: 2;
-}
-.gal2 {
-    grid-column: 1; grid-row: 3;
-}
-.gal3 {
-    grid-column: 1; grid-row: 4;
-}
-.gal11 {
-    grid-column: 1; grid-row: 12;
-}
-.espacioGal {
-    grid-column: 1;
-}
-    /*footer*/
-    .footer {
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        justify-content: center;
-        text-align: center;
-    }
-    .footer h2 {
-        /*Contactanos*/
-        font-size: var(--textSmall);
-    }
-    .footer p { 
-        /*Wsp, Correo y Volver al principio*/
-        font-size: var(--textXxsmall);
-    }
-}
-/*** FIN MEDIAS QUERY ***/
-
-
-
-
-
-/*COMENTARIOS A TUTORÍA
--En el footer el enlace "volver al principio" fue rediseñado.
--Se cambiaron los textos de las páginas. 
--Ya esta enlazado todo Sass y listo para su uso. Pero no esta en esta entrega el pasaje del código.
-*/
+    row-gap: 1rem; }
+    .section__galeria .tituloGal {
+      grid-column: 1 / span 1; }
+    .section__galeria .gal1 {
+      grid-column: 1;
+      grid-row: 2; }
+    .section__galeria .gal2 {
+      grid-column: 1;
+      grid-row: 3; }
+    .section__galeria .gal3 {
+      grid-column: 1;
+      grid-row: 4; }
+    .section__galeria .gal11 {
+      grid-column: 1;
+      grid-row: 12; }
+    .section__galeria .espacioGal {
+      grid-column: 1; }
+  /*footer*/
+  .footer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    text-align: center; }
+    .footer .footerInfo h2 {
+      /*Contactanos*/
+      font-size: 2em; }
+    .footer p {
+      /*Wsp, Correo y Volver al principio*/
+      font-size: 1em; } }

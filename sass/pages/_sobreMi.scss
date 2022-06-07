@@ -1,0 +1,32 @@
+/*SOBRE MI*/
+.sectionSobre { 
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+
+    .pictSobre { 
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 3;
+        z-index: -3;
+
+        img {
+            width: 100%; 
+        }
+    }    
+    .tituloSobre { 
+        text-align: end;
+        margin-top: 1.6em; margin-right: .2em;
+        grid-column: 3;
+        grid-row: 1;
+        z-index: -2;
+    }
+    .descripcionSobre { 
+        text-align: justify;
+        width: 45rem;
+        margin-right: 2rem; margin-bottom: 3rem;
+        grid-column: 3;
+        grid-row: 3;
+        z-index: -1;
+    } 
+}  
+/*Fin SOBRE MI*/

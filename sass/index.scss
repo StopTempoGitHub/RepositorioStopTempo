@@ -1,0 +1,24 @@
+/*** Misc ***/
+
+@import "../sass/misc/fonts";
+@import "../sass/misc/variables";
+@import "../sass/misc/normalize";
+
+/*** Partials ***/
+
+@import "../sass/partials/body";
+@import "../sass/partials/header";
+@import "../sass/partials/footer";
+@import "../sass/partials/main";
+
+/*** Pages ***/
+
+@import "../sass/pages/home";
+@import "../sass/pages/galeria";
+@import  "../sass/pages/servicios";
+@import "../sass/pages/sobreMi";
+@import "../sass/pages/contacto";
+
+/*** Medias Query ***/
+
+@import "../sass/misc/mediasquery"

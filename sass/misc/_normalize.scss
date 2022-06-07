@@ -1,0 +1,12 @@
+/*NORMALIZE (Qué son las normalizaciones? Son reseteos que le hacemos a nuestras etiquetas)*/
+* { /*Esta es la más básica de las normalizaciones. Usada para eliminar los posibles espaciados del navegador. Muchos navegadores establecen un margen por defecto en sus páginas. Con el reseteo de margin y padding eliminamos este comportamiento del navegador para luego determinar nosotros el comportamiento de los elementos*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /*desaparece el desplazamiento horizontal y corrige un problema con las imagenes de fondo haciendo scroll horizontal*/
+}
+
+html { 
+    font-size: 62.5%; /*Esta define el tamaño de los "em" y "rem" a 10px. "rem" es una unidad de medida que siempre va a hacer caso a la medida establecida en el html. "em" es una unidad de medida relativa; hará caso a la medida establecida en el html, salvo que el padre tenga otra medida establecida*/
+}
+/*Fin NORMALIZE*/

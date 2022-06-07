@@ -1,0 +1,26 @@
+        /*HOME*/
+.sectionHome {
+    margin-bottom: 15%;
+    display: grid;
+    grid-template-areas: 'picture picture picture'
+                         'titulo titulo titulo'
+                         'descrip descrip descrip';
+    .pictureHome {
+        grid-area: picture;
+        
+        img {
+            width: 100%;
+        }
+    }
+    .tituloHome {
+        grid-area: titulo;
+        text-align: center;
+    }
+    .descripcionHome {
+        grid-area: descrip;
+        text-align: center;
+        margin-right: 20vw; margin-left: 20vw;
+    }
+}
+
+        /*Fin HOME*/

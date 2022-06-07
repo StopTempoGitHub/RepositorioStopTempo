@@ -1,0 +1,40 @@
+/*** PIE DE PÁGINA ***/
+.footer {
+    /* BackGround Footer */
+    background: linear-gradient(358deg, rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
+    border-top: solid black 3px;
+    padding: 1rem;
+    /* FIN BackGround Footer */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .footerInfo {
+        h2 {
+            /*Contactanos*/ 
+            color: $colorWhite;
+            font-size: $textMedium;
+            font-family: $fontVollSc;
+        }   
+    }
+    p { 
+        /*Wsp, Correo y Volver al principio*/
+        color: $colorWhite;
+        font-size: $textSmall;
+        margin-left: 1rem;
+        font-family: $fontOpen;
+    }
+    .footerEnlace {
+        a {
+            color: $colorTres;
+            text-decoration: none;
+        }
+        a:hover {
+            color: $colorWhite;
+            text-decoration: underline;
+        }
+    }
+}
+/*** FIN PIE DE PÁGINA ***/
+

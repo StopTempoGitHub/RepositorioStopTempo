@@ -1,0 +1,41 @@
+/*SERVICIOS*/
+.sectionServicios { 
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    
+    .pictServicios{ 
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 3;
+        z-index: -3;
+    
+        img { 
+            transform: translate(11%);
+            width: 100%;
+            }
+    }
+    .tituloServicios { 
+        margin-left: 2rem; margin-top: 5rem;
+        grid-column: 1;
+        grid-row: 1;
+        z-index: -2;
+    }
+    .descripcionServicios { 
+        transform: translate(0rem, -10rem);
+        margin-left: 2rem;
+        grid-column: 1;
+        grid-row: 2 / span 2;
+        z-index: -1;
+        text-align: center;
+        justify-content: end;
+        align-items: flex-end;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(8, auto);
+        
+        .ico { 
+            width: 6rem;
+        }
+    }
+}
+/*Fin SERVICIOS*/
