@@ -273,12 +273,15 @@
 
 
     /*footer*/
-    .footer {
+    .footer { 
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
         justify-content: center;
         text-align: center;
+        position: fixed;
+        bottom: 0px; width: 100%;
+        /*con "position fixed, bottom 0 y width 100%" se resuelve en gran medida el problema de que el footer suba en la página. Sin embargo hay que desarrollar otros media query para terminar de corregir.*/
         
         .footerInfo {
             h2 {

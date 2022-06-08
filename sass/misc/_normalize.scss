@@ -10,3 +10,24 @@ html {
     font-size: 62.5%; /*Esta define el tamaño de los "em" y "rem" a 10px. "rem" es una unidad de medida que siempre va a hacer caso a la medida establecida en el html. "em" es una unidad de medida relativa; hará caso a la medida establecida en el html, salvo que el padre tenga otra medida establecida*/
 }
 /*Fin NORMALIZE*/
+
+/* Barra de navegación vertical */
+
+body::-webkit-scrollbar {
+    appearance: none;
+    background-color: rgba($colorDos, 0)
+}
+
+body::-webkit-scrollbar:vertical {
+    width:12px;
+}
+
+body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
+    display: none;
+} 
+
+body::-webkit-scrollbar-thumb {
+    background: radial-gradient(rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
+    border-radius: 20px;
+}
+/* Fin Barra de navegación vertical*/

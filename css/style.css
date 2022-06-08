@@ -23,6 +23,22 @@ html {
   /*Esta define el tamaño de los "em" y "rem" a 10px. "rem" es una unidad de medida que siempre va a hacer caso a la medida establecida en el html. "em" es una unidad de medida relativa; hará caso a la medida establecida en el html, salvo que el padre tenga otra medida establecida*/ }
 
 /*Fin NORMALIZE*/
+/* Barra de navegación vertical */
+body::-webkit-scrollbar {
+  appearance: none;
+  background-color: rgba(158, 93, 0, 0); }
+
+body::-webkit-scrollbar:vertical {
+  width: 12px; }
+
+body::-webkit-scrollbar-button:increment, body::-webkit-scrollbar-button {
+  display: none; }
+
+body::-webkit-scrollbar-thumb {
+  background: radial-gradient(#fee214 6%, #934d08 43%, black 78%);
+  border-radius: 20px; }
+
+/* Fin Barra de navegación vertical*/
 /*** Partials ***/
 /*** BODY ***/
 /* Fondo de página */
@@ -510,7 +526,11 @@ html {
     grid-template-columns: auto;
     grid-template-rows: auto;
     justify-content: center;
-    text-align: center; }
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    /*con "position fixed, bottom 0 y width 100%" se resuelve en gran medida el problema de que el footer suba en la página. Sin embargo hay que desarrollar otros media query para terminar de corregir.*/ }
     .footer .footerInfo h2 {
       /*Contactanos*/
       font-size: 2em; }
