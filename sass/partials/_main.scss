@@ -1,12 +1,12 @@
 /*** MAIN ***/
     /*Estilos generales de las Fuentes del Main*/
     .tituloStyles {
-        color: $colorWhite;
+        color: map-get($map: $palette, $key: 'textcolorWhite');
         font-family: $fontVollSc;
         font-size: $textXlarge;
     }
     .descripcionStyles {
-        color: $colorWhite;
+        color: map-get($map: $palette, $key: 'textcolorWhite');
         font-family: $fontOpen;
         font-size: $textXsmall;
         text-indent: 20px;

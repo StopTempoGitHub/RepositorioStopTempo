@@ -1,7 +1,7 @@
 /*** BODY ***/
     /* Fondo de página */
     .body {
-        background-color: $colorBlack;
+        background-color: map-get($map: $palette, $key: 'background');
     }
         /* Fin fondo de página */
     /*** FIN BODY ***/

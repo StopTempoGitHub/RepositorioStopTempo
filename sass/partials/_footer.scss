@@ -1,14 +1,18 @@
 /*** PIE DE PÁGINA ***/
+.flexFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .footer {
     /* BackGround Footer */
     background: linear-gradient(358deg, rgba(254,226,20,1) 6%, rgba(147,77,8,1) 43%, rgba(0,0,0,1) 78%);
     border-top: solid black 3px;
     padding: 1rem;
     /* FIN BackGround Footer */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+    @extend .flexFooter;
 
     .footerInfo {
         h2 {
