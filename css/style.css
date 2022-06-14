@@ -122,11 +122,27 @@ body::-webkit-scrollbar-thumb {
   border-top: solid black 3px;
   padding: 1rem;
   /* FIN BackGround Footer */ }
-  .footer .footerInfo h2 {
-    /*Contactanos*/
-    color: #F2F1ED;
-    font-size: 3em;
-    font-family: "Vollkorn SC", serif; }
+  .footer .footerInfo {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+    align-items: center; }
+    .footer .footerInfo h2 {
+      /*Contactanos*/
+      grid-column: 1 / span 2;
+      color: #F2F1ED;
+      font-size: 3em;
+      font-family: "Vollkorn SC", serif; }
+    .footer .footerInfo .footerIcon {
+      width: 32px;
+      grid-column: 1; }
+    .footer .footerInfo p {
+      grid-column: 2; }
+    .footer .footerInfo a {
+      color: #F2F1ED;
+      text-decoration: none; }
+    .footer .footerInfo a:hover {
+      text-decoration: underline; }
   .footer p {
     /*Wsp, Correo y Volver al principio*/
     color: #F2F1ED;
@@ -531,9 +547,16 @@ body::-webkit-scrollbar-thumb {
     bottom: 0px;
     width: 100%;
     /*con "position fixed, bottom 0 y width 100%" se resuelve en gran medida el problema de que el footer suba en la página. Sin embargo hay que desarrollar otros media query para terminar de corregir.*/ }
-    .footer .footerInfo h2 {
-      /*Contactanos*/
-      font-size: 2em; }
+    .footer .footerInfo {
+      text-align: justify; }
+      .footer .footerInfo h2 {
+        /*Contactanos*/
+        grid-column: 2;
+        font-size: 2em; }
+      .footer .footerInfo .footerIcon {
+        width: 20px; }
     .footer p {
       /*Wsp, Correo y Volver al principio*/
-      font-size: 1em; } }
+      font-size: 1em; }
+    .footer .footerEnlace {
+      margin-right: 30%; } }

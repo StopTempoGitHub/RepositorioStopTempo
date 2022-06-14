@@ -15,11 +15,30 @@
     @extend .flexFooter;
 
     .footerInfo {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(4, auto);
+        align-items: center;
         h2 {
             /*Contactanos*/ 
+            grid-column: 1 / span 2;
             color: $colorWhite;
             font-size: $textMedium;
             font-family: $fontVollSc;
+        }
+        .footerIcon  {
+            width: 32px;
+            grid-column: 1;
+        }
+        p {
+            grid-column: 2;
+        }
+        a {
+            color: $colorWhite;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }   
     }
     p { 

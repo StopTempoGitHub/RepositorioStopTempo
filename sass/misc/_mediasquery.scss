@@ -283,14 +283,22 @@
         /*con "position fixed, bottom 0 y width 100%" se resuelve en gran medida el problema de que el footer suba en la página. Sin embargo hay que desarrollar otros media query para terminar de corregir.*/
         
         .footerInfo {
+            text-align: justify;
             h2 {
                 /*Contactanos*/
+                grid-column: 2;
                 font-size: $textSmall;
-            }   
+            }
+            .footerIcon {
+                width: 20px;
+            }              
         }
         p { 
             /*Wsp, Correo y Volver al principio*/
             font-size: $textXxsmall;
+        }
+        .footerEnlace {
+            margin-right: 30%;
         }
     }
 }
