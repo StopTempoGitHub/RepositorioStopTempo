@@ -110,7 +110,9 @@
                 padding-top: 2em;
             }
         }
-        .formularioContacto { 
+        .formularioContacto {
+            margin-left: 0rem;
+            margin-bottom: 0rem; 
             display: grid; 
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(7, 3rem);

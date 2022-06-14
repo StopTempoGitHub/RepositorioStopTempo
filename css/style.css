@@ -432,6 +432,8 @@ body::-webkit-scrollbar-thumb {
       .sectionServicios .descripcionServicios p, .sectionServicios .descripcionServicios .ico, .sectionContacto .descripcionServicios p, .sectionContacto .descripcionServicios .ico {
         padding-top: 2em; }
     .sectionServicios .formularioContacto, .sectionContacto .formularioContacto {
+      margin-left: 0rem;
+      margin-bottom: 0rem;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(7, 3rem); }
