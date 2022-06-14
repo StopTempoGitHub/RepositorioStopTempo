@@ -51,12 +51,12 @@
             </picture>
             <!-- FORMULARIO -->
             <h1 class="tituloContacto tituloStyles">Contacto</h2>
-            <form class="formularioContacto" method="get">
+            <form class="formularioContacto" action="enviar.php" method="get" enctype="text/plain">
                 <input class="nombre" type="text" placeholder="Nombre" required>
                 <input class="apellido" type="text" placeholder="Apellido" required>
                 <input class="correo" type="email" placeholder="Correo válido" required>
                 <textarea class="pregunta" name="textarea" cols="50" rows="10" placeholder="Si tenés alguna pregunta o estas interesado/a en nuestros servicios podés escribirnos por acá." required></textarea>
-                <input class="enviar" type="submit" >
+                <input class="enviar" type="submit" value="Enviar">
             </form>
         </section>
     </main>    
