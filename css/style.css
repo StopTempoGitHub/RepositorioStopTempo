@@ -288,6 +288,11 @@ body::-webkit-scrollbar-thumb {
 
 /*Fin SOBRE MI*/
 /*CONTACTO*/
+.FormStyles, .sectionContacto .formularioContacto .nombre, .sectionContacto .formularioContacto .apellido, .sectionContacto .formularioContacto .correo, .sectionContacto .formularioContacto .pregunta {
+  background-color: transparent;
+  color: #F2F1ED;
+  padding-left: 5px; }
+
 .sectionContacto {
   display: grid;
   grid-template-columns: auto auto auto;
