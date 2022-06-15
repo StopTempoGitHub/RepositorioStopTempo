@@ -520,7 +520,7 @@ body::-webkit-scrollbar-thumb {
   .tituloStyles {
     font-size: 3em; }
   .descripcionStyles {
-    font-size: 1em; }
+    font-size: 1.3em; }
   .descripcionServicios .ico {
     width: 4rem; }
   /*main galeria*/
@@ -567,7 +567,7 @@ body::-webkit-scrollbar-thumb {
         width: 20px; }
     .footer p {
       /*Wsp, Correo y Volver al principio*/
-      font-size: 1em; }
+      font-size: 1.3em; }
     .footer .footerEnlace {
       margin-right: 30%; }
   .footerFixed {
