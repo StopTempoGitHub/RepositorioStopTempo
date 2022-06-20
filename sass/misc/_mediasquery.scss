@@ -7,7 +7,7 @@
         font-size: $textLarge;
     }
     .descripcionSobre {
-        font-size: $textXsmall;
+        font-size:$textXStres;
     }
     
 }
@@ -17,7 +17,7 @@
             font-size: $textLarge;
         }
         .descripcionServicios {    
-            font-size: $textXsmall2;
+            font-size: $textXSdos;
         }
     }
     
@@ -47,7 +47,7 @@
     .footer {          
         p { 
             /*Wsp, Correo y Volver al principio*/
-            font-size: $textXsmall;
+            font-size:$textXStres;
         }
     }
 }
@@ -229,8 +229,14 @@
     /*header*/
     .header {
         .header__logo {
+            width: 170px;
             img {
-                width: 170px;
+                width: 100%;
+            }
+        }
+        .header__nav--menu {
+            li {
+                font-size: $textSmallDos;
             }
         }
         .menuHambur {
@@ -247,7 +253,7 @@
         font-size: $textMedium;
     }
     .descripcionStyles {
-        font-size: $textXxsmall;
+        font-size: $textXSuno;
     }
     .descripcionServicios .ico {
         width: 4rem;
@@ -283,36 +289,32 @@
 
 
     /*footer*/
-    .footer { 
+    .footer {
         display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
+        grid-template-columns: 1 auto;
+        grid-template-rows: repeat(2, auto);
         justify-content: center;
-        text-align: center;
-        position: static;
-        bottom: 0px; width: 100%;
-        /*con "position fixed, bottom 0 y width 100%" se resuelve en gran medida el problema de que el footer suba en la página. Sin embargo hay que desarrollar otros media query para terminar de corregir.*/
-        
+
         .footerInfo {
-            text-align: justify;
+            /*Contactanos*/
             h2 {
-                /*Contactanos*/
-                grid-column: 2;
-                font-size: $textSmall;
+                text-align: center;
+                font-size: $textSmallDos;
             }
             .footerIcon {
-                width: 20px;
-            }              
-        }
-        p { 
+                width: 18px;
+            }
             /*Wsp, Correo y Volver al principio*/
-            font-size: $textXxsmall;
+            p {
+                font-size: $textXSuno;
+                padding-top: .1em;
+            }
         }
         .footerEnlace {
-            margin-right: 30%;
+            p {
+                padding-left: 1em;
+                font-size: $textXStres;
+            }
         }
-    }
-    .footerFixed {
-        position: fixed;
     }
 }

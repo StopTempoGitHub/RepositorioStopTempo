@@ -1,18 +1,19 @@
 /*** MAIN ***/
     /*Estilos generales de las Fuentes del Main*/
     .tituloStyles {
-        color: map-get($map: $palette, $key: 'textcolorWhite');
-        font-family: $fontVollSc;
+        color: $colorWhite;
+        font-family: $fontOswald;
+        font-weight: 200;
         font-size: $textXlarge;
     }
     .descripcionStyles {
-        color: map-get($map: $palette, $key: 'textcolorWhite');
-        font-family: $fontOpen;
-        font-size: $textXsmall;
+        color: $colorWhite;
+        font-family: $fontHind;
+        font-size:$textXStres;
         text-indent: 20px;
         
         p::first-letter {
-            font-size: $textXsmall;
+            font-size:$textXStres;
         }
     }
     /*Fin Estilos generales de las Fuentes del Main*/

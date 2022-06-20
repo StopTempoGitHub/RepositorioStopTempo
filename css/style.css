@@ -4,6 +4,10 @@
 /*font-family: 'Open Sans', sans-serif;
 font-family: 'Vollkorn', serif;
 font-family: 'Vollkorn SC', serif;*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300&display=swap");
+/*font-family: 'Oswald', sans-serif; Weight: 200, 300*/
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap");
+/*font-family: 'Hind', sans-serif;*/
 /* VARIABLES */
 /* Colores */
 /*Fonts*/
@@ -69,8 +73,10 @@ body::-webkit-scrollbar-thumb {
   /* MENU de nav*/
   /*Empezamos a diseñar el menu hambuerguesa*/
   /* Fin MENU de nav */ }
-  .header .header__logo img {
+  .header .header__logo {
     width: 200px; }
+    .header .header__logo img {
+      width: 100%; }
   .header .header__nav--menu {
     list-style: none;
     /*quita los puntos de mi lista*/
@@ -81,7 +87,7 @@ body::-webkit-scrollbar-thumb {
     margin-right: 3rem; }
     .header .header__nav--menu li {
       font-family: "Open Sans", sans-serif;
-      font-size: 3em;
+      font-size: 2.6em;
       margin-right: 1em;
       /*me da distancia entre los elementos*/ }
     .header .header__nav--menu li:last-child {
@@ -110,33 +116,33 @@ body::-webkit-scrollbar-thumb {
 
 /*** FIN HEADER ***/
 /*** PIE DE PÁGINA ***/
-.flexFooter, .footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end; }
-
 .footer {
   /* BackGround Footer */
   background: linear-gradient(358deg, #fee214 6%, #934d08 43%, black 78%);
   border-top: solid black 3px;
   padding: 1rem;
-  /* FIN BackGround Footer */ }
+  /* FIN BackGround Footer */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end; }
   .footer .footerInfo {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, auto);
-    align-items: center; }
+    grid-template-rows: repeat(4, auto); }
     .footer .footerInfo h2 {
       /*Contactanos*/
       grid-column: 1 / span 2;
       color: #F2F1ED;
-      font-size: 3em;
-      font-family: "Vollkorn SC", serif; }
+      font-size: 2.6em;
+      font-family: "Oswald", sans-serif;
+      font-weight: 200; }
     .footer .footerInfo .footerIcon {
-      width: 32px;
+      padding-bottom: .5em;
+      width: 100%;
       grid-column: 1; }
     .footer .footerInfo p {
+      padding-top: .1em;
       grid-column: 2; }
     .footer .footerInfo a {
       color: #F2F1ED;
@@ -146,9 +152,9 @@ body::-webkit-scrollbar-thumb {
   .footer p {
     /*Wsp, Correo y Volver al principio*/
     color: #F2F1ED;
-    font-size: 2em;
-    margin-left: 1rem;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Hind", sans-serif;
+    font-size: 1.8em;
+    margin-left: 1rem; }
   .footer .footerEnlace a {
     color: #251605;
     text-decoration: none; }
@@ -161,12 +167,13 @@ body::-webkit-scrollbar-thumb {
 /*Estilos generales de las Fuentes del Main*/
 .tituloStyles {
   color: #F2F1ED;
-  font-family: "Vollkorn SC", serif;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
   font-size: 8em; }
 
 .descripcionStyles {
   color: #F2F1ED;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Hind", sans-serif;
   font-size: 1.6em;
   text-indent: 20px; }
   .descripcionStyles p::first-letter {
@@ -288,11 +295,13 @@ body::-webkit-scrollbar-thumb {
 
 /*Fin SOBRE MI*/
 /*CONTACTO*/
+/*@extend*/
 .FormStyles, .sectionContacto .formularioContacto .nombre, .sectionContacto .formularioContacto .apellido, .sectionContacto .formularioContacto .correo, .sectionContacto .formularioContacto .pregunta {
   background-color: transparent;
   color: #F2F1ED;
   padding-left: 5px; }
 
+/*Fin @extend*/
 .sectionContacto {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -510,8 +519,12 @@ body::-webkit-scrollbar-thumb {
 /*cuando la pantalla sea igual o inferior a 560px se aplicaran estos cambios*/
 @media (max-width: 560px) {
   /*header*/
-  .header .header__logo img {
+  .header .header__logo {
     width: 170px; }
+    .header .header__logo img {
+      width: 100%; }
+  .header .header__nav--menu li {
+    font-size: 2em; }
   .header .menuHambur img {
     width: 35px;
     height: 35px;
@@ -549,26 +562,20 @@ body::-webkit-scrollbar-thumb {
   /*footer*/
   .footer {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    justify-content: center;
-    text-align: center;
-    position: static;
-    bottom: 0px;
-    width: 100%;
-    /*con "position fixed, bottom 0 y width 100%" se resuelve en gran medida el problema de que el footer suba en la página. Sin embargo hay que desarrollar otros media query para terminar de corregir.*/ }
+    grid-template-columns: 1 auto;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center; }
     .footer .footerInfo {
-      text-align: justify; }
+      /*Contactanos*/
+      /*Wsp, Correo y Volver al principio*/ }
       .footer .footerInfo h2 {
-        /*Contactanos*/
-        grid-column: 2;
+        text-align: center;
         font-size: 2em; }
       .footer .footerInfo .footerIcon {
-        width: 20px; }
-    .footer p {
-      /*Wsp, Correo y Volver al principio*/
-      font-size: 1.3em; }
-    .footer .footerEnlace {
-      margin-right: 30%; }
-  .footerFixed {
-    position: fixed; } }
+        width: 18px; }
+      .footer .footerInfo p {
+        font-size: 1.3em;
+        padding-top: .1em; }
+    .footer .footerEnlace p {
+      padding-left: 1em;
+      font-size: 1.6em; } }

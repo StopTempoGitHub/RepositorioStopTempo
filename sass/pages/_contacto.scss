@@ -1,9 +1,11 @@
 /*CONTACTO*/
-.FormStyles {
-    background-color: transparent;
-    color: $colorWhite;
-    padding-left: 5px;
-}
+        /*@extend*/
+        .FormStyles {
+            background-color: transparent;
+            color: $colorWhite;
+            padding-left: 5px;
+        }
+        /*Fin @extend*/ 
 
 .sectionContacto { 
     display: grid;
