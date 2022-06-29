@@ -8,13 +8,13 @@
     display: flex;
     flex-direction: row; /*Con esto el menu se posiciona al lado del logo*/
     justify-content: space-between; /*Con esto logro que el logo quede a la izquierda y el menu a la derecha*/
-    align-items: flex-end; /*pone los elementos en la linea inferior del header*/
+    align-items: center; /*pone los elementos centrados en el header*/
     /* Fin Flex al Header*/
     padding: 0rem 0rem 0rem 1rem; /*el orden es: top,right, bottom, left*/
     
     /* LOGO */
     .header__logo {
-        width: 200px;
+        width: 250px;
         img {
             width: 100%;
         }
@@ -26,7 +26,7 @@
         list-style: none; /*quita los puntos de mi lista*/
         display: flex;
         flex-direction: row;
-        margin-bottom: 1rem; /*Separa un poco el menu de la linea inferior del header*/
+        /* margin-bottom: 1rem; /* Separa un poco el menu de la linea inferior del header (ya no lo necesitas porque la lista irá centrada)*/
         margin-right: 3rem;
         
         li {

@@ -9,8 +9,45 @@
     .descripcionSobre {
         font-size:$textXStres;
     }
-    
+    .sectionSobre {    
+        .pictSobre {
+            img { 
+                display: none;
+            }
+            .fullimg {
+                display: block;
+            }
+        }
+        .tituloSobre { 
+            margin-top: 2.5em;
+            color: white;
+        }
+        .descripcionSobre {
+        }    
+    }    
 }
+
+ /*CONTROL DE IMAGENES DE FONDO*/
+@media (max-width: 1260px){
+    .sectionServicios {        
+        .pictServicios{     
+            img { 
+                transform: translate(11%);
+                width: 100%;
+            }
+        }
+    }
+    .sectionContacto {    
+        .pictContacto {
+            img { 
+                transform: translate(5%);
+                width: 100%;
+            }
+        }   
+    }
+}
+
+
 @media (max-width:1218px){
     .sectionServicios {
         .tituloServicios {       
@@ -56,15 +93,15 @@
 @media (max-width:968px){
     /* Menu Hamburguesa */
     .header {
+        align-items: flex-end; /* permite que el menu desplegable no se superponga al menu hamburguesa */
         .header__nav {
             .checkbtn {
                 display: block;
                 cursor: pointer;
-            
                 .menuHambur {
                     display: block; /*hace aparecer el menuHambur*/
                     position: absolute; /*acomoda el menuHambur con respecto al menu. Con absolute lo dejo quieto en el header.*/
-                    top: 8.5rem; right: 2rem ; /*separa el menuHambur del top y un poco del borde derecho*/
+                    top: 6.5rem; right: 2rem ; /*separa el menuHambur del top y un poco del borde derecho*/
                 }
             }
             .header__nav--menu {
@@ -84,7 +121,7 @@
                 }
                 li:last-child {
                     background: none;
-                    padding: 0.30rem 0.75rem;
+                    padding: 0.30rem;
                 }
             }
             #check:checked ~ ul { /*checked para indicar que se hará cada vez que le hagamos click. ~ (alt+126) para seleccionar todos elementos dentro del contenedor padre (ul para este caso)*/
@@ -229,7 +266,7 @@
     /*header*/
     .header {
         .header__logo {
-            width: 170px;
+            width: 220px;
             img {
                 width: 100%;
             }
@@ -257,6 +294,12 @@
     }
     .descripcionServicios .ico {
         width: 4rem;
+    }
+    .sectionHome {
+        margin-bottom: 30%; /* Corrige el flotamiento del footer al achicar la pantalla en la página Home */
+    }
+    .sectionContacto {
+        margin-bottom: 20rem; /* Corrige el flotamiento del footer en la página contacto */
     }
 
     /*main galeria*/

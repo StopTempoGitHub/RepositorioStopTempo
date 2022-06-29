@@ -1,5 +1,5 @@
 /*SERVICIOS*/
-.sectionServicios { 
+.sectionServicios {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
@@ -9,10 +9,17 @@
         grid-row: 1 / span 3;
         z-index: -3;
     
-        img { 
-            transform: translate(11%);
-            width: 100%;
-            }
+                        /* Correcciones de imagen*/
+                        width: auto; height: 100%;
+                        img { 
+                            width: 80%;
+                            transform: translate(25%);
+                            }
+
+        // img { 
+        //     transform: translate(11%);
+        //     width: 100%;
+        //     }
     }
     .tituloServicios { 
         margin-left: 2rem; margin-top: 5rem;
