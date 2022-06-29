@@ -7,7 +7,7 @@
         font-size: $textLarge;
     }
     .descripcionSobre {
-        font-size:$textXStres;
+        font-size:$textXSdos;
     }
     .sectionSobre {    
         .pictSobre {
@@ -19,11 +19,12 @@
             }
         }
         .tituloSobre { 
-            margin-top: 2.5em;
+            margin-top: 1.5em;
             color: white;
         }
         .descripcionSobre {
-        }    
+            width: 45rem;
+        }
     }    
 }
 
@@ -57,29 +58,7 @@
             font-size: $textXSdos;
         }
     }
-    
-    /*Sobre Mi*/ 
-    .sectionSobre { 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 15%;
-
-        .pictSobre { 
-            img {
-                width: 100%;
-            }
-        }
-        .tituloSobre { 
-            margin-top: 0; margin-left: 0;
-        }
-        .descripcionSobre { 
-            width: 70%; 
-            margin-top: 0; margin-left: 0;
-        }
-    }
-    
+        
     /* Footer */
     .footer {          
         p { 
@@ -131,7 +110,28 @@
         }    
     }    
     /* FIN Menu Hamburguesa*/ 
-    /*Servicios y contacto*/
+    /*Servicios, Sobre mi y contacto*/
+    .sectionSobre { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15%;
+
+        .pictSobre { 
+            img {
+                width: 100%;
+            }
+        }
+        .tituloSobre { 
+            margin-top: 0; margin-left: 0;
+        }
+        .descripcionSobre { 
+            width: 70%; 
+            margin-top: 0; margin-left: 0;
+        }
+    }
+
     .sectionServicios, .sectionContacto { 
         display: flex;
         flex-direction: column;

@@ -368,14 +368,16 @@ body::-webkit-scrollbar-thumb {
   .tituloContacto {
     font-size: 5.2em; }
   .descripcionSobre {
-    font-size: 1.6em; }
+    font-size: 1.4em; }
   .sectionSobre .pictSobre img {
     display: none; }
   .sectionSobre .pictSobre .fullimg {
     display: block; }
   .sectionSobre .tituloSobre {
-    margin-top: 2.5em;
-    color: white; } }
+    margin-top: 1.5em;
+    color: white; }
+  .sectionSobre .descripcionSobre {
+    width: 45rem; } }
 
 /*CONTROL DE IMAGENES DE FONDO*/
 @media (max-width: 1260px) {
@@ -391,22 +393,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 5.2em; }
   .sectionServicios .descripcionServicios {
     font-size: 1.4em; }
-  /*Sobre Mi*/
-  .sectionSobre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 15%; }
-    .sectionSobre .pictSobre img {
-      width: 100%; }
-    .sectionSobre .tituloSobre {
-      margin-top: 0;
-      margin-left: 0; }
-    .sectionSobre .descripcionSobre {
-      width: 70%;
-      margin-top: 0;
-      margin-left: 0; }
   /* Footer */
   .footer p {
     /*Wsp, Correo y Volver al principio*/
@@ -455,7 +441,22 @@ body::-webkit-scrollbar-thumb {
       left: 0;
       transition: all 0.25s; }
   /* FIN Menu Hamburguesa*/
-  /*Servicios y contacto*/
+  /*Servicios, Sobre mi y contacto*/
+  .sectionSobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15%; }
+    .sectionSobre .pictSobre img {
+      width: 100%; }
+    .sectionSobre .tituloSobre {
+      margin-top: 0;
+      margin-left: 0; }
+    .sectionSobre .descripcionSobre {
+      width: 70%;
+      margin-top: 0;
+      margin-left: 0; }
   .sectionServicios, .sectionContacto {
     display: flex;
     flex-direction: column;
