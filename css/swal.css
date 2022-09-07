@@ -1,0 +1,18 @@
+.swal-title {
+    border-bottom: solid 2px black;
+    font-size: 4rem;
+    padding-bottom: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: "Oswald", sans-serif;
+}
+.swal-text {
+    font-family: "Hind", sans-serif;
+    text-align: center;
+    font-size: 1.8rem;
+}
+.swal-button {
+    font-family: "Hind", sans-serif;    
+    font-size: 1.6rem;
+    background-color: black;
+}
